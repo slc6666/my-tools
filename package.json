@@ -1,0 +1,16 @@
+{
+  "name": "my-tools",
+  "version": "1.0.0",
+  "description": "Private toolkit including project components and common methods",
+  "main": "/dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slc6666/my-tools.git"
+  },
+  "devDependencies": {},
+  "author": "slc6666 kingingslc@gmail.com",
+  "license": "ISC"
+}
