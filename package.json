@@ -1,16 +1,46 @@
 {
-  "name": "my-tools",
-  "version": "1.0.0",
-  "description": "Private toolkit including project components and common methods",
-  "main": "/dist/index.js",
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "package": "vue-cli-service build --target lib ./src/package/index.js --name my-tools --dest my-tools/dist",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/slc6666/my-tools.git"
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14"
   },
-  "devDependencies": {},
-  "author": "slc6666 kingingslc@gmail.com",
-  "license": "ISC"
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
