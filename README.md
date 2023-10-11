@@ -1,24 +1,21 @@
-# test
+# my-tools
 
-## Project setup
-```
-npm install
-```
+## Project Desc
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- 这个项目是私人项目，主要是自己的工具库，组件哭
+- 基于 vue 开发，依赖elementUI@2.15.14
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 组件
 
-### Lints and fixes files
-```
-npm run lint
-```
+### 通用弹窗 commonDialog
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- params title String "请输入用户信息"
+- params btn Object
+  `{
+        style: {
+          background: 'red',
+          color: 'white'
+        },
+        text: '确定'
+}`
+  -params loading Boolean
