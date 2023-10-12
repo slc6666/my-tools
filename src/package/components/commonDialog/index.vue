@@ -70,24 +70,25 @@ export default {
         };
       },
     },
-    show: {},
     loading: {
       type: Boolean,
       default: false,
+    },
+    visiable: {
+      type: Boolean,
+      default: false,
+      required: true,
     },
   },
   data() {
     return {
       downloadUrl: "",
-      dialogFormVisible: true,
       form: {
         whatsApp: "",
         country: "",
         email: "",
         username: "",
       },
-      groupLink: "FeGHfFS7zwu3WI0YdjHRSz",
-
       rules: {
         username: [
           { required: true, message: "Please Enter", trigger: "blur" },
@@ -110,60 +111,18 @@ export default {
       countryData,
     };
   },
-  computed: {},
+  computed: {
+    dialogFormVisible: {
+      get() {
+        return this.visiable;
+      },
+      set(val) {
+        this.$emit("update:visiable", val);
+      },
+    },
+  },
   mounted() {},
   methods: {
-    fetchData() {
-      const url =
-        "https://www.spotolearning.com/learningapi/api/info/collect/add";
-      fetch(url, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({
-          ...this.form,
-          extendField1: window.location.href,
-          collectType: this.collectType,
-          ipFrom: this.form.country,
-        }),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((res) => {
-          if (res.code == 200) {
-            if (!this.needDown) {
-              this.$emit("callBack");
-              this.dialogFormVisible = false;
-              this.$message.success("Submitted successfully");
-              return;
-            }
-            this.$message({
-              dangerouslyUseHTMLString: true,
-              duration: 0,
-              showClose: true,
-              message: `Download Successful! <a style="color:#2a4182" href="https://chat.whatsapp.com/${this.groupLink}" target="_blank">Join WhatsApp study Group.</a>`,
-              type: "success",
-            });
-            this.dialogFormVisible = false;
-            localStorage.setItem("freeResourcesDown", true);
-            window.open(
-              `https://www.spotoexam.com/api/common/download/${this.downloadUrl}.pdf`,
-              "_self"
-            );
-          } else {
-            this.$message({
-              dangerouslyUseHTMLString: true,
-              duration: 0,
-              showClose: true,
-              message: res.msg,
-              type: "warning",
-            });
-          }
-        })
-        .finally(() => {});
-    },
     handleSubmit() {
       this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
@@ -180,42 +139,78 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-::v-deep .el-dialog {
-  border-radius: 9px;
-}
-::v-deep .el-form-item {
-  position: relative;
-}
-.el-select {
-  width: 100%;
-}
-::v-deep .el-form-item__label {
-  &::before {
-    display: none;
+@media screen and (min-width: 960px) {
+  ::v-deep .el-dialog {
+    border-radius: 9px;
   }
-  line-height: 12px;
-  position: absolute;
-  padding: 0;
-  background-color: #ffffff;
-  left: 12px;
-  top: -6px;
-  padding: 0 6px;
-  font-size: 12px;
-  z-index: 2;
-  font-weight: bold;
-  color: #2a4182;
-}
-::v-deep .el-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  & > div {
-    width: 46%;
+  ::v-deep .el-form-item {
+    position: relative;
+  }
+  .el-select {
+    width: 100%;
+  }
+  ::v-deep .el-form-item__label {
+    &::before {
+      display: none;
+    }
+    line-height: 12px;
+    position: absolute;
+    padding: 0;
+    background-color: #ffffff;
+    left: 12px;
+    top: -6px;
+    padding: 0 6px;
+    font-size: 12px;
+    z-index: 2;
+    font-weight: bold;
+    color: #2a4182;
+  }
+  ::v-deep .el-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & > div {
+      width: 46%;
+    }
+  }
+  ::v-deep .el-dialog__title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #212121;
   }
 }
-::v-deep .el-dialog__title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #212121;
+@media screen and (max-width: 960px) {
+  ::v-deep .el-dialog {
+    border-radius: 9px;
+    width: 90%;
+  }
+  ::v-deep .el-form-item {
+    position: relative;
+  }
+  .el-select {
+    width: 100%;
+  }
+  ::v-deep .el-form-item__label {
+    &::before {
+      display: none;
+    }
+    line-height: 12px;
+    position: absolute;
+    padding: 0;
+    background-color: #ffffff;
+    left: 12px;
+    top: -6px;
+    padding: 0 6px;
+    font-size: 12px;
+    z-index: 2;
+    font-weight: bold;
+    color: #2a4182;
+  }
+
+  ::v-deep .el-dialog__title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #212121;
+  }
 }
 </style>
