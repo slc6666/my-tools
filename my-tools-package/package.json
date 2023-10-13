@@ -1,8 +1,8 @@
 {
-  "name": "my-tools",
+  "name": "slc-tools",
   "version": "1.0.0",
   "description": "Private toolkit including project components and common methods",
-  "main": "dist/my-tools.common.js",
+  "main": "dist/my-tools.umd.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "package": "vue-cli-service build --target lib ./src/package/index.js --name my-tools --dest my-tools/dist",
+    "build": "vue-cli-service build --report",
+    "package": "vue-cli-service build --mode production --target lib ./src/package/index.js --name my-tools --dest my-tools-package/dist",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14",
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
