@@ -1,16 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <el-button type="primary">Primary</el-button>
-    <commonDialog></commonDialog>
+    <initDialog :visiable.sync="a">
+      <template slot="title"
+        >fdsfsdf <span class="blue">怎么说</span> pplpjo</template
+      >
+      <template slot="desc">fdsfsdf <span class="blue">怎么说</span> </template>
+    </initDialog>
+    000
   </div>
 </template>
 
 <script>
-import { commonDialog } from "./package/index";
+import { initDialog } from "./package/index";
 export default {
   name: "App",
-  components: { commonDialog },
+  components: { initDialog },
+  data() {
+    return {
+      a: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.a = true;
+    }, 1000);
+  },
 };
 </script>
 

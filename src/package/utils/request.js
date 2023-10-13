@@ -23,4 +23,5 @@ const getIP = async () => {
   const url = "https://publicsys.spotoclub.net/api/tool/getdefaultipinfo";
   return await customFetch(url, "GET");
 };
+
 export default { getIP, checkNumber };

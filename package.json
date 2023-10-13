@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --report",
     "package": "vue-cli-service build --mode production --target lib ./src/package/index.js --name my-tools --dest my-tools-package/dist",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "element-ui": "^2.15.14"
+  },
   "devDependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14",

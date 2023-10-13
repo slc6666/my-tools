@@ -1340,6 +1340,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   commonDialog: function() { return /* reexport */ components_commonDialog; },
   countryData: function() { return /* reexport */ utils_countryData; },
+  initDialog: function() { return /* reexport */ components_initDialog; },
   myBtn: function() { return /* reexport */ components_myBtn; },
   request: function() { return /* reexport */ request; }
 });
@@ -1544,8 +1545,8 @@ myBtn.install = function (Vue) {
   Vue.component(myBtn.name, myBtn);
 };
 /* harmony default export */ var components_myBtn = (myBtn);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/commonDialog/index.vue?vue&type=template&id=3800b2da&scoped=true&
-var commonDialogvue_type_template_id_3800b2da_scoped_true_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/commonDialog/index.vue?vue&type=template&id=1304ba96&scoped=true&
+var commonDialogvue_type_template_id_1304ba96_scoped_true_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('el-dialog', {
@@ -1657,7 +1658,7 @@ var commonDialogvue_type_template_id_3800b2da_scoped_true_render = function rend
     }
   }, [_vm._v(" " + _vm._s(_vm.btn.text) + " ")])], 1)], 1);
 };
-var commonDialogvue_type_template_id_3800b2da_scoped_true_staticRenderFns = [];
+var commonDialogvue_type_template_id_1304ba96_scoped_true_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./src/package/utils/countryData.js
 let countryData = [{
@@ -2827,7 +2828,6 @@ let countryData = [{
   mounted() {},
   methods: {
     handleSubmit() {
-      this.dialogFormVisible = false;
       this.$refs["ruleForm"].validate(valid => {
         if (valid) {
           this.$emit("valid", {
@@ -2841,10 +2841,10 @@ let countryData = [{
 });
 ;// CONCATENATED MODULE: ./src/package/components/commonDialog/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_commonDialogvue_type_script_lang_js_ = (commonDialogvue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/commonDialog/index.vue?vue&type=style&index=0&id=3800b2da&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/commonDialog/index.vue?vue&type=style&index=0&id=1304ba96&prod&lang=scss&scoped=true&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/package/components/commonDialog/index.vue?vue&type=style&index=0&id=3800b2da&prod&lang=scss&scoped=true&
+;// CONCATENATED MODULE: ./src/package/components/commonDialog/index.vue?vue&type=style&index=0&id=1304ba96&prod&lang=scss&scoped=true&
 
 ;// CONCATENATED MODULE: ./src/package/components/commonDialog/index.vue
 
@@ -2857,11 +2857,11 @@ let countryData = [{
 
 var commonDialog_component = normalizeComponent(
   components_commonDialogvue_type_script_lang_js_,
-  commonDialogvue_type_template_id_3800b2da_scoped_true_render,
-  commonDialogvue_type_template_id_3800b2da_scoped_true_staticRenderFns,
+  commonDialogvue_type_template_id_1304ba96_scoped_true_render,
+  commonDialogvue_type_template_id_1304ba96_scoped_true_staticRenderFns,
   false,
   null,
-  "3800b2da",
+  "1304ba96",
   null
   
 )
@@ -2874,6 +2874,116 @@ commonDialog.install = function (Vue) {
   Vue.component(commonDialog.name, commonDialog);
 };
 /* harmony default export */ var components_commonDialog = (commonDialog);
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/initDialog/index.vue?vue&type=template&id=7e53be1e&scoped=true&
+var initDialogvue_type_template_id_7e53be1e_scoped_true_render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _vm.show ? _c('div', {
+    staticClass: "dialog"
+  }, [_c('div', {
+    staticClass: "content"
+  }, [_c('span', {
+    staticClass: "el-icon-close close",
+    on: {
+      "click": function ($event) {
+        _vm.show = false;
+      }
+    }
+  }), _c('div', {
+    staticClass: "header"
+  }, [_c('h2', [_vm._t("title")], 2), _c('p', [_vm._v("Register on SPOTO Learning and grab the offer")])]), _c('div', {
+    staticClass: "main"
+  }, [_c('div', {
+    staticClass: "img_wrap"
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.mainImg,
+      "alt": "",
+      "srcset": ""
+    }
+  })]), _c('div', [_c('p', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_vm._t("desc")], 2), _c('el-form', {
+    ref: "formData",
+    staticClass: "form",
+    attrs: {
+      "model": _vm.formData,
+      "rules": _vm.rules
+    }
+  }, [_c('el-form-item', {
+    staticClass: "email",
+    attrs: {
+      "prop": "email"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "placeholder": "*Your email"
+    },
+    model: {
+      value: _vm.formData.email,
+      callback: function ($$v) {
+        _vm.$set(_vm.formData, "email", $$v);
+      },
+      expression: "formData.email"
+    }
+  })], 1), _c('el-form-item', {
+    attrs: {
+      "prop": "whatsApp"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "placeholder": "*Please enter your Phone/WhatsApp(18250151260)"
+    },
+    model: {
+      value: _vm.formData.whatsApp,
+      callback: function ($$v) {
+        _vm.$set(_vm.formData, "whatsApp", $$v);
+      },
+      expression: "formData.whatsApp"
+    }
+  })], 1), _c('el-select', {
+    staticClass: "item",
+    model: {
+      value: _vm.formData.targetExam,
+      callback: function ($$v) {
+        _vm.$set(_vm.formData, "targetExam", $$v);
+      },
+      expression: "formData.targetExam"
+    }
+  }, _vm._l(_vm.selData, function (item, index) {
+    return _c('el-option', {
+      key: index,
+      attrs: {
+        "label": item,
+        "value": item
+      }
+    });
+  }), 1), _c('br'), _c('br'), _c('el-checkbox', {
+    model: {
+      value: _vm.subscribe,
+      callback: function ($$v) {
+        _vm.subscribe = $$v;
+      },
+      expression: "subscribe"
+    }
+  }, [_vm._v("Subscribe to SPOTO's marketing news")]), _c('a', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: _vm.loading,
+      expression: "loading"
+    }],
+    on: {
+      "click": function ($event) {
+        return _vm.submitForm('formData');
+      }
+    }
+  }, [_vm._v(" Unlock Your Discount")])], 1)], 1)])])]) : _vm._e();
+};
+var initDialogvue_type_template_id_7e53be1e_scoped_true_staticRenderFns = [];
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.url-search-params.delete.js
 var web_url_search_params_delete = __webpack_require__(6229);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.url-search-params.has.js
@@ -2949,7 +3059,165 @@ const getIP = async () => {
   getIP,
   checkNumber
 });
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/initDialog/index.vue?vue&type=script&lang=js&
+
+/* harmony default export */ var initDialogvue_type_script_lang_js_ = ({
+  name: "initDialog",
+  data() {
+    return {
+      subscribe: false,
+      loading: false,
+      rules: {
+        whatsApp: [{
+          required: true,
+          message: "Please fill out",
+          trigger: "blur"
+        }],
+        email: [{
+          type: "email",
+          required: true,
+          message: "Please input the correct email address",
+          trigger: ["blur"]
+        }]
+      },
+      formData: {
+        email: "",
+        whatsApp: "",
+        targetExam: "Cisco Certification"
+      }
+    };
+  },
+  props: {
+    mainImg: {
+      type: String,
+      required: true
+    },
+    visiable: {
+      type: Boolean,
+      default: false,
+      required: true
+    },
+    selData: {
+      type: Array,
+      default: () => ["Cisco Certification", "F5 Certification", "ISACA Certification", "CompTIA Certification", "Other Network Certification"]
+    },
+    normalSubmit: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    show: {
+      get() {
+        return this.visiable;
+      },
+      set(val) {
+        this.$emit("update:visiable", val);
+      }
+    }
+  },
+  async mounted() {},
+  methods: {
+    submitForm(form) {
+      this.$refs[form].validate(async valid => {
+        if (valid) {
+          if (this.normalSubmit) {
+            this.loading = true;
+            const {
+              ip,
+              country_name
+            } = (await request.getIP()).data;
+            this.handleSubmit(ip, country_name);
+          } else {
+            this.$emit("valid", this.formData);
+          }
+        }
+      });
+    },
+    /**
+     * 方法说明
+     * @param {Array} formData 表单数据
+     */
+    handleSubmit(ip, city) {
+      let that = this;
+      let url =  false ? 0 : "https://www.spotolearning.com/learningapi";
+      fetch(`${url}/api/info/collect/v2/add`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        body: JSON.stringify({
+          ...that.formData,
+          ipAddr: ip,
+          collectType: 6,
+          ipFrom: city,
+          extendField1: window.location.href
+        })
+      }).then(response => {
+        return response.json();
+      }).then(res => {
+        if (res.code == 200) {
+          that.$message({
+            message: "Submitted successfully",
+            type: "success",
+            duration: 0,
+            showClose: true
+          });
+          that.show = false;
+        } else {
+          that.$message({
+            message: res.msg,
+            type: "info",
+            duration: 0,
+            showClose: true
+          });
+        }
+      }).catch(() => {
+        that.show = false;
+        alert("net error");
+      }).finally(() => {
+        that.loading = false;
+      });
+    }
+  }
+});
+;// CONCATENATED MODULE: ./src/package/components/initDialog/index.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_initDialogvue_type_script_lang_js_ = (initDialogvue_type_script_lang_js_); 
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/initDialog/index.vue?vue&type=style&index=0&id=7e53be1e&prod&lang=scss&scoped=true&
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/package/components/initDialog/index.vue?vue&type=style&index=0&id=7e53be1e&prod&lang=scss&scoped=true&
+
+;// CONCATENATED MODULE: ./src/package/components/initDialog/index.vue
+
+
+
+;
+
+
+/* normalize component */
+
+var initDialog_component = normalizeComponent(
+  components_initDialogvue_type_script_lang_js_,
+  initDialogvue_type_template_id_7e53be1e_scoped_true_render,
+  initDialogvue_type_template_id_7e53be1e_scoped_true_staticRenderFns,
+  false,
+  null,
+  "7e53be1e",
+  null
+  
+)
+
+/* harmony default export */ var initDialog = (initDialog_component.exports);
+;// CONCATENATED MODULE: ./src/package/components/initDialog/index.js
+
+/* istanbul ignore next */
+initDialog.install = function (Vue) {
+  Vue.component(initDialog.name, initDialog);
+};
+/* harmony default export */ var components_initDialog = (initDialog);
 ;// CONCATENATED MODULE: ./src/package/index.js
+
 
 
 
