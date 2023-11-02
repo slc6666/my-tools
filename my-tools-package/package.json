@@ -1,6 +1,6 @@
 {
   "name": "slc-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Private toolkit including project components and common methods",
   "main": "dist/my-tools.umd.min.js",
   "scripts": {
@@ -8,6 +8,13 @@
   },
   "keywords": [
     "slc6666"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slc6666/my-tools.git"
+  },
+  "files": [
+    "README.md"
   ],
   "author": "kingingslc@gmail.com",
   "license": "ISC"
