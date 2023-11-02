@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { initDialog } from "./package/index";
+import { initDialog, request } from "./package/index";
 export default {
   name: "App",
   components: { initDialog },
@@ -20,10 +20,10 @@ export default {
       a: false,
     };
   },
-  mounted() {
-    setTimeout(() => {
-      this.a = true;
-    }, 1000);
+
+  async mounted() {
+    let a = await request.getActiveTopText();
+    console.log(a);
   },
 };
 </script>

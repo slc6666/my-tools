@@ -58,6 +58,12 @@
 - @return {Promise<string>} The IP address as a string.
 ```
 
+### getActiveTopText
+
+```js
+- @return {Promise<string>} 活动顶部文案
+```
+
 ## 通用数据
 
 ### countryData 全球国家代码信息

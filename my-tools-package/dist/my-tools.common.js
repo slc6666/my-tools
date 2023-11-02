@@ -2985,7 +2985,7 @@ var web_url_search_params_size = __webpack_require__(2062);
 
 
 // 通用的 fetch 请求函数
-function customFetch(url, method, data = null) {
+async function customFetch(url, method, data = null) {
   const headers = {
     // 可以设置请求头，例如 'Content-Type' 或 'Authorization'
     "Content-Type": "application/json;charset=UTF-8"
@@ -3009,14 +3009,15 @@ function customFetch(url, method, data = null) {
   }
 
   // 发起 fetch 请求
-  return fetch(url, options).then(response => {
+  try {
+    const response = await fetch(url, options);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    return response.json(); // 解析响应数据
-  }).catch(error => {
-    console.error("Fetch error:", error);
-  });
+    return Promise.resolve(response.json());
+  } catch (error) {
+    return Promise.reject(error);
+  }
 }
 
 ;// CONCATENATED MODULE: ./src/package/utils/request.js
@@ -3045,9 +3046,24 @@ const getIP = async () => {
   const url = "https://publicsys.spotoclub.net/api/tool/getdefaultipinfo";
   return await customFetch(url, "GET");
 };
+/**
+ * Retrieves the active top text from the specified URL.
+ *
+ * @param {string} [str="active_top_text"] - The name of the active top text.
+ * @return {Promise} A promise that resolves to the response of the customFetch function.
+ */
+const getActiveTopText = async (str = "active_top_text") => {
+  const url = "https://www.spotodumps.com/api/appConfig/" + str;
+  const response = await customFetch(url, "GET");
+  if (str === "active_top_text" && response && response.code === 0) {
+    return response.data;
+  }
+  return response;
+};
 /* harmony default export */ var request = ({
   getIP,
-  checkNumber
+  checkNumber,
+  getActiveTopText
 });
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/package/components/initDialog/index.vue?vue&type=script&lang=js&
 

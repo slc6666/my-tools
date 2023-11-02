@@ -23,5 +23,18 @@ const getIP = async () => {
   const url = "https://publicsys.spotoclub.net/api/tool/getdefaultipinfo";
   return await customFetch(url, "GET");
 };
-
-export default { getIP, checkNumber };
+/**
+ * Retrieves the active top text from the specified URL.
+ *
+ * @param {string} [str="active_top_text"] - The name of the active top text.
+ * @return {Promise} A promise that resolves to the response of the customFetch function.
+ */
+const getActiveTopText = async (str = "active_top_text") => {
+  const url = "https://www.spotodumps.com/api/appConfig/" + str;
+  const response = await customFetch(url, "GET");
+  if (str === "active_top_text" && response && response.code === 0) {
+    return response.data;
+  }
+  return response;
+};
+export default { getIP, checkNumber, getActiveTopText };
